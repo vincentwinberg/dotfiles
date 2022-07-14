@@ -3,9 +3,9 @@ call plug#begin('~/.vim/plugged')
 " themes etc
 Plug 'vim-airline/vim-airline'  
 Plug 'vim-airline/vim-airline-themes'
+Plug 'jacoborus/tender.vim'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'chriskempson/base16-vim'
-Plug 'tanvirtin/monokai.nvim'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " utils
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -15,7 +15,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'navarasu/onedark.nvim'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
@@ -113,7 +112,7 @@ set mouse=a
 set signcolumn=number
 
 " relative line numbers
-"set relativenumber
+set relativenumber
 "set rnu
 
 let &t_SI = "\e[6 q"
@@ -123,7 +122,9 @@ if has('nvim') || has('termguicolors')
   set termguicolors
 endif
 
-colorscheme onehalfdark
+colorscheme base16-default-dark
+
+let g:gruvbox_contrast_dark = "soft"
 
 " airline config
 let g:airline_powerline_fonts = 1
@@ -133,7 +134,7 @@ if !exists('g:airline_symbols')
 endif
 
 let g:lightline = {
-      \ 'colorscheme': 'onehalfdark',
+      \ 'colorscheme': 'base16-default-dark',
       \ }
 
 " unicode symbols
